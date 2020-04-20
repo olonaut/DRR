@@ -16,7 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Danke Ronjaberg Remastered"
+run/main_scene="res://scenes/mainmenu.tscn"
+config/custom_user_dir_name="dankeronjaberg"
+boot_splash/image="res://gfx/icons/olonaut_inv.png"
 config/icon="res://icon.png"
+config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
+
+[display]
+
+window/size/height=1024
 
 [rendering]
 
