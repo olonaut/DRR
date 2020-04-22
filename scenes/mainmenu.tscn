@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gfx/icons/Danke Ronyaberg .png" type="Texture" id=1]
 [ext_resource path="res://font/titlemenu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/buttoncontroller.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,7 +24,6 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
 
 [node name="vMenu" type="VBoxContainer" parent="MarginContainer"]
-margin_top = 25.0
 margin_right = 924.0
 margin_bottom = 300.0
 custom_constants/separation = 50
@@ -46,6 +46,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "start game"
 align = 1
 uppercase = true
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,6 +64,7 @@ margin_bottom = 22.0
 custom_fonts/font = ExtResource( 2 )
 text = "Options"
 align = 1
+script = ExtResource( 3 )
 
 [node name="hReserve" type="HBoxContainer" parent="MarginContainer/vMenu"]
 margin_top = 144.0
@@ -77,6 +79,7 @@ margin_bottom = 22.0
 custom_fonts/font = ExtResource( 2 )
 text = "credits"
 align = 1
+script = ExtResource( 3 )
 
 [node name="hQuit" type="HBoxContainer" parent="MarginContainer/vMenu"]
 margin_top = 216.0
@@ -91,3 +94,4 @@ margin_bottom = 22.0
 custom_fonts/font = ExtResource( 2 )
 text = "quit game"
 align = 1
+script = ExtResource( 3 )
