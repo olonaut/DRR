@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://git_api.gdns"
+} ]
 _global_script_class_icons={
-
+"GitAPI": ""
 }
 
 [application]
@@ -25,6 +30,10 @@ config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
 [display]
 
 window/size/height=1024
+
+[gdnative]
+
+singletons=[ "res://git_api.gdnlib" ]
 
 [rendering]
 
