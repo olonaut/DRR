@@ -5,9 +5,12 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -1292.06
+margin_top = 162.789
+margin_right = 5520.94
+margin_bottom = 838.789
 texture = ExtResource( 1 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
