@@ -3,6 +3,7 @@ extends Button
 
 export(Resource) var newscene;
 export(bool) var exitsGame;
+export(bool) var hasFocus;
 
 func _ready():
 	var _bindButton = self.connect("pressed",self, "loadScene");
@@ -10,8 +11,10 @@ func _ready():
 		print_debug("Button binding successful");
 	else:
 		print_debug("Button binding failed with code " + _bindButton);
+	if hasFocus:
+		self.grab_focus();
 	pass
-
+	
 func loadScene():
 	if exitsGame:
 		print_debug("Exiting Game...");

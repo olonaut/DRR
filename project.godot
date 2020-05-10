@@ -30,6 +30,10 @@ config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
 [display]
 
 window/size/height=1024
+window/size/resizable=false
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gdnative]
 
