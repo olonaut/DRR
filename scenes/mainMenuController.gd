@@ -1,6 +1,5 @@
-extends RichTextLabel
+extends Node2D
 
-export(Resource) var testRes;
 
 # Declare member variables here. Examples:
 # var a = 2
