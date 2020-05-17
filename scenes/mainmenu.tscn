@@ -4,7 +4,7 @@
 [ext_resource path="res://font/titlemenu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/bMenuButtonController.gd" type="Script" id=3]
 [ext_resource path="res://scenes/credits.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/gamescreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/levelSelect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/options.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
@@ -86,6 +86,8 @@ margin_left = 393.0
 margin_right = 530.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.368627, 0.811765, 1 )
+custom_colors/font_color_pressed = Color( 0.682353, 0, 0.752941, 1 )
 text = "START GAME"
 flat = true
 script = ExtResource( 3 )
@@ -103,6 +105,8 @@ margin_left = 415.0
 margin_right = 509.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.368627, 0.811765, 1 )
+custom_colors/font_color_pressed = Color( 0.682353, 0, 0.752941, 1 )
 text = "OPTIONS"
 flat = true
 script = ExtResource( 3 )
@@ -119,6 +123,8 @@ margin_left = 415.0
 margin_right = 508.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.368627, 0.811765, 1 )
+custom_colors/font_color_pressed = Color( 0.682353, 0, 0.752941, 1 )
 text = "CREDITS"
 flat = true
 script = ExtResource( 3 )
@@ -135,6 +141,8 @@ margin_left = 404.0
 margin_right = 519.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.368627, 0.811765, 1 )
+custom_colors/font_color_pressed = Color( 0.682353, 0, 0.752941, 1 )
 text = "QUIT GAME"
 flat = true
 script = ExtResource( 3 )
