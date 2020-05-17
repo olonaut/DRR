@@ -7,6 +7,7 @@
 script = ExtResource( 2 )
 
 [node name="debugText" type="TextureRect" parent="."]
+visible = false
 margin_left = -1292.06
 margin_top = 162.789
 margin_right = 5520.94
