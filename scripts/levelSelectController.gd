@@ -1,6 +1,10 @@
 extends Node2D
 
+# Main Menu Scene RES-Link
 var mainMenuScene = "res://scenes/mainmenu.tscn";
+
+# RES-URL for level selection. Substitute $ with level number (1-indexed)
+var levelRessource = "res://scenes/levels/level$.tscn"
 
 # reference to player node
 var player;
@@ -82,4 +86,10 @@ func playermovement():
 		# Checks if player is already all the way to the right
 		if playerPos != (len(levels)-1):
 			movePlayerToLevel(playerPos+1);
+	pass
+
+
+
+# Enter level where the player currently is
+func enterLevel():
 	pass
