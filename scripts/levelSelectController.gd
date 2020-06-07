@@ -2,6 +2,9 @@ extends Node2D
 
 var mainMenuScene = "res://scenes/mainmenu.tscn";
 
+# reference to player node
+var player;
+
 # references to the level container
 var levelcontainer;
 
@@ -21,14 +24,20 @@ func _ready():
 			print_debug("Found level Container! " + n.to_string());
 			levelcontainer = n;
 			break;
-	
+			
 	# Apply reference to the levels
 	levels = levelcontainer.get_children();
-	
+
 	# Found n levels
 	print_debug("Found " + str(len(levels)) + " levels.")
-
-
+	
+	# Find player
+	for n in children:
+		if n.name == "player":
+			print_debug("Found player! " + n.to_string());
+			player = n;
+			break;
+	
 func _process(_delta):
 	# Back to main Menu
 	if Input.is_action_pressed("ui_cancel"):
