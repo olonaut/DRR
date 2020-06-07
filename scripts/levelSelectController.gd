@@ -41,6 +41,8 @@ func _ready():
 	# Move player to first level when starting
 	movePlayerToLevel(levels[0]);
 	
+
+	
 func _process(_delta):
 	# Back to main Menu on ui_cancel signal
 	if Input.is_action_pressed("ui_cancel"):
@@ -50,6 +52,8 @@ func _process(_delta):
 		else:
 			print_debug("Switching levels failed. Errorcode : " + _loadResult);
 	
+
+
 # Move player to center of level with fixed offset of x64,y64
 func movePlayerToLevel(level):
 	var newPos : Vector2 = level.get_position();
