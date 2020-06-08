@@ -3,9 +3,9 @@
 [node name="main" type="Node2D"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 1030.0
-margin_bottom = 149.0
-text = "Credits	"
+margin_right = 1021.0
+margin_bottom = 167.0
+text = "Level 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }

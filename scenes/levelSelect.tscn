@@ -21,18 +21,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level1" type="Node2D" parent="."]
-position = Vector2( 200, 826 )
+[node name="player" type="Node2D" parent="."]
+z_index = 1
 
-[node name="TextureRect" type="TextureRect" parent="level1"]
-anchor_left = 100.0
-anchor_top = 100.0
-anchor_right = 100.0
-anchor_bottom = 100.0
-margin_left = -103.34
-margin_top = -98.3298
-margin_right = 121.66
-margin_bottom = 126.67
+[node name="TextureRect" type="TextureRect" parent="player"]
+anchor_left = 5.0
+anchor_top = 5.0
+anchor_right = 5.0
+anchor_bottom = 5.0
+margin_right = 128.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="levelContainer" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Place only levels here"
+}
+
+[node name="level1" type="Node2D" parent="levelContainer"]
+position = Vector2( 64, 704 )
+
+[node name="TextureRect" type="TextureRect" parent="levelContainer/level1"]
+margin_right = 256.0
+margin_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 2 )
@@ -42,18 +61,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level2" type="Node2D" parent="."]
-position = Vector2( 512, 512 )
+[node name="level2" type="Node2D" parent="levelContainer"]
+position = Vector2( 360, 420 )
 
-[node name="TextureRect" type="TextureRect" parent="level2"]
-anchor_left = 100.0
-anchor_top = 100.0
-anchor_right = 100.0
-anchor_bottom = 100.0
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
+[node name="TextureRect" type="TextureRect" parent="levelContainer/level2"]
+margin_right = 256.0
+margin_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 4 )
@@ -63,34 +76,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="level3" type="Node2D" parent="."]
-position = Vector2( 824, 200 )
+[node name="level3" type="Node2D" parent="levelContainer"]
+position = Vector2( 704, 64 )
 
-[node name="TextureRect" type="TextureRect" parent="level3"]
+[node name="TextureRect" type="TextureRect" parent="levelContainer/level3"]
 anchor_left = 100.0
 anchor_top = 100.0
 anchor_right = 100.0
 anchor_bottom = 100.0
-margin_left = -128.0
-margin_top = -128.0
-margin_right = 128.0
-margin_bottom = 128.0
+margin_right = 256.0
+margin_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="player" type="Node2D" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="player"]
-margin_right = 128.0
-margin_bottom = 128.0
-texture = ExtResource( 5 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

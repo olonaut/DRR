@@ -8,6 +8,7 @@
 margin_left = -1.0
 margin_right = 1025.0
 margin_bottom = 181.0
+text = "Options"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
