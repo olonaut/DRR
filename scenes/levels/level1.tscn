@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="main" type="Node2D"]
+
+[node name="DebugText" type="RichTextLabel" parent="."]
+margin_right = 1024.0
+margin_bottom = 112.0
+text = "Level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
