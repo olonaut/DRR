@@ -5,7 +5,7 @@
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 1030.0
 margin_bottom = 149.0
-text = "Credits"
+text = "Credits	"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -60,6 +60,10 @@ func _process(_delta):
 	# Call method that deals with player movement
 	playermovement();
 
+	# Check if user selects level
+	if Input.is_action_just_pressed("ui_accept"):
+		enterLevel();
+
 
 
 # Move player to center of level with fixed offset of x64,y64
@@ -93,4 +97,9 @@ func playermovement():
 
 # Enter level where the player currently is
 func enterLevel():
+	var _loadResult = get_tree().change_scene(levelRessource.replace("$",str(playerPos+1)));
+	if _loadResult == OK:
+		print_debug("Successfully switched level");
+	else:
+		print_debug("Switching levels failed. Errorcode : " + _loadResult);
 	pass
