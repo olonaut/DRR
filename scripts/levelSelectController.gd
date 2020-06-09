@@ -1,8 +1,5 @@
 extends Node2D
 
-# Main Menu Scene RES-Link
-var mainMenuScene = "res://scenes/mainmenu.tscn";
-
 # RES-URL for level selection. Substitute $ with level number (1-indexed)
 var levelRessource = "res://scenes/levels/level$.tscn"
 
@@ -51,7 +48,7 @@ func _ready():
 func _process(_delta):
 	# Back to main Menu on ui_cancel signal
 	if Input.is_action_pressed("ui_cancel"):
-		var _loadResult = get_tree().change_scene(mainMenuScene);
+		var _loadResult = get_tree().change_scene(Globalvars.mainMenuScene);
 		if _loadResult == OK:
 			print_debug("Successfully switched level");
 		else:

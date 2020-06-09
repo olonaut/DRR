@@ -22,6 +22,10 @@ boot_splash/image="res://gfx/icons/olonaut_inv.png"
 config/icon="res://icon.png"
 config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
 
+[autoload]
+
+Globalvars="*res://scripts/singleton/globalvars.gd"
+
 [display]
 
 window/size/height=1024

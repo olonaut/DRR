@@ -1,6 +1,5 @@
 extends Button
 
-
 export(Resource) var newscene;
 export(bool) var exitsGame;
 export(bool) var hasFocus;
