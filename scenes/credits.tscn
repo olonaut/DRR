@@ -5,7 +5,15 @@
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 1030.0
 margin_bottom = 1024.0
-text = "Credits	"
+text = "Development - Theodor Dickens - @0none_
+
+Music and Graphics - A - 
+
+Additional Graphics - Gonzo - 
+
+Backgrounds by pixabay
+
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
