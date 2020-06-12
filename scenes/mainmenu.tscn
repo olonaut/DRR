@@ -147,7 +147,3 @@ text = "QUIT GAME"
 flat = true
 script = ExtResource( 3 )
 exitsGame = true
-[connection signal="pressed" from="MarginContainer/vMenu/hStartGame/bStartGame" to="MarginContainer/vMenu/hStartGame/bStartGame" method="_on_bStartGame_pressed"]
-[connection signal="pressed" from="MarginContainer/vMenu/hOptions/bOptions" to="." method="_on_bOptions_pressed"]
-[connection signal="pressed" from="MarginContainer/vMenu/hCredits/hCredits" to="." method="_on_hCredits_pressed"]
-[connection signal="pressed" from="MarginContainer/vMenu/hQuit/bQuit" to="." method="_on_bQuit_pressed"]
