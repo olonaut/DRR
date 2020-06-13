@@ -78,13 +78,11 @@ func movePlayerToLevel(levelNum):
 func playermovement():
 	# User wants to send player to the left
 	if Input.is_action_just_pressed("ui_left"):
-		print_debug("trying to move player left");
 		# Checks if player is already all the way to the left
 		if playerPos != 0:
 			movePlayerToLevel(playerPos-1);
 
 	if Input.is_action_just_pressed("ui_right"):
-		print_debug("right button press detected");
 		# Checks if player is already all the way to the right
 		if playerPos != (len(levels)-1):
 			movePlayerToLevel(playerPos+1);
