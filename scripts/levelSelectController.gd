@@ -98,3 +98,14 @@ func enterLevel():
 	else:
 		print_debug("Switching levels failed. Errorcode : " + _loadResult);
 	pass
+
+
+
+func _on_Area2D_mouse_entered():
+	print_debug("Yo shit the mouse is here");
+	pass # Replace with function body.
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
+	pass # Replace with function body.
