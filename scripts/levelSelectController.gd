@@ -70,7 +70,6 @@ func movePlayerToLevel(levelNum):
 	newPos += offset;
 	player.set_position(newPos);
 	playerPos = levelNum;
-	pass
 
 
 
@@ -86,26 +85,28 @@ func playermovement():
 		# Checks if player is already all the way to the right
 		if playerPos != (len(levels)-1):
 			movePlayerToLevel(playerPos+1);
-	pass
 
 
 
-# Enter level where the player currently is
+# Enter level.
+# Takes player position as level selector.
 func enterLevel():
 	var _loadResult = get_tree().change_scene(levelRessource.replace("$",str(playerPos+1)));
 	if _loadResult == OK:
 		print_debug("Successfully switched level");
 	else:
 		print_debug("Switching levels failed. Errorcode : " + _loadResult);
-	pass
 
 
 
-func _on_Area2D_mouse_entered():
-	print_debug("Yo shit the mouse is here");
-	pass # Replace with function body.
+# Signal "mouse entered" from collision shapes
+func _on_Area2D_mouse_entered(source):
+	# Move player to the level of the level node
+	# This is supposed to come as an int, but we cast it just to be sure
+	movePlayerToLevel(int(source));
+
+
 
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
-	pass # Replace with function body.
