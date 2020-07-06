@@ -108,5 +108,7 @@ func _on_Area2D_mouse_entered(source):
 
 
 
-func _on_Area2D_input_event(viewport, event, shape_idx):
-	print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
+func _on_Area2D_input_event(viewport, event, shape_idx, source):
+	if event is InputEventMouseButton:
+		print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
+		print_debug("CLICK at source " + str(source));
