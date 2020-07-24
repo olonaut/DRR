@@ -3,13 +3,13 @@ extends Node2D
 # RES-URL for level selection. Substitute $ with level number (1-indexed)
 var levelRessource = "res://scenes/levels/level$.tscn"
 
-# reference to player node
+# Reference to player node
 var player;
 
-# references to the level container
+# References to the level container
 var levelcontainer;
 
-# references to the levels
+# References to the levels
 var levels;
 
 # What stage the player has currently selected
