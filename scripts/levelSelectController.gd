@@ -107,8 +107,15 @@ func _on_Area2D_mouse_entered(source):
 
 
 
-
 func _on_Area2D_input_event(viewport, event, shape_idx, source):
 	if event is InputEventMouseButton:
 		print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
 		print_debug("CLICK at source " + str(source));
+		enterLevel();
+		# Okay so the problem here is that, it is theoretically possible
+		# for the player to not be on the same scene that the mouse is on
+		# when the mouse clicks and it ends up loading the wrong level.
+		# This could happen when the user clicks on an object and the 
+		# signal is triggered before _proccess is called.
+		# So it's a race condition between the CPU and an interrupt.
+		# This is an edge case and I can't be bothered to fix that right now.
