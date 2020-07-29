@@ -10,4 +10,3 @@ func _process(_delta):
 		var result = get_tree().change_scene(Globalvars.mainMenuScene);
 		if result != 0:
 			print_debug("Level load failed with errorcode: " + result);
-#	pass
