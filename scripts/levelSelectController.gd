@@ -42,7 +42,7 @@ func _ready():
 	
 	# Move player to first level when starting
 	movePlayerToLevel(0);
-
+	
 
 
 func _process(_delta):
@@ -104,3 +104,11 @@ func _on_Area2D_mouse_entered(source):
 	# Move player to the level of the level node
 	# This is supposed to come as an int, but we cast it just to be sure
 	movePlayerToLevel(int(source));
+
+
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx, source):
+	if event is InputEventMouseButton:
+		print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
+		print_debug("CLICK at source " + str(source));
