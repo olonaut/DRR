@@ -25,6 +25,7 @@ config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
 [autoload]
 
 Globalvars="*res://scripts/singleton/globalvars.gd"
+BgMusic="*res://scenes/singletons/BGMusic.tscn"
 
 [display]
 

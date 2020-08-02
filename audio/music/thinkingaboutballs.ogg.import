@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thinkingaboutballs.ogg-7433100b78b1301f75c7ecb76e0d3ad3.oggstr"
+
+[deps]
+
+source_file="res://audio/music/thinkingaboutballs.ogg"
+dest_files=[ "res://.import/thinkingaboutballs.ogg-7433100b78b1301f75c7ecb76e0d3ad3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
