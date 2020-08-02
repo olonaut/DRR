@@ -1,16 +1,24 @@
 extends Node
 
+# Reference to the local slider node
+var slider;
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# Constants for range conversion
+var maxDB = 0;
+var minDB = -72;
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for n in get_children():
+		if n.name == "value":
+			print_debug("found value label");
+			slider = n;
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_HSlider_value_changed(value,bus):
+	slider.text = str(value) + "%"
+	AudioServer.set_bus_volume_db(bus, convertRange(value));
+	
+# Convert 
+func convertRange(oldVal):
+	var newRange = (maxDB - minDB)
+	return ((oldVal * newRange ) / 100 ) + minDB;
