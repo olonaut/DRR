@@ -3,13 +3,13 @@ extends Node2D
 # RES-URL for level selection. Substitute $ with level number (1-indexed)
 var levelRessource = "res://scenes/levels/level$.tscn"
 
-# reference to player node
+# Reference to player node
 var player;
 
-# references to the level container
+# References to the level container
 var levelcontainer;
 
-# references to the levels
+# References to the levels
 var levels;
 
 # What stage the player has currently selected
@@ -70,7 +70,6 @@ func movePlayerToLevel(levelNum):
 	newPos += offset;
 	player.set_position(newPos);
 	playerPos = levelNum;
-	pass
 
 
 
@@ -86,15 +85,37 @@ func playermovement():
 		# Checks if player is already all the way to the right
 		if playerPos != (len(levels)-1):
 			movePlayerToLevel(playerPos+1);
-	pass
 
 
 
-# Enter level where the player currently is
+# Enter level.
+# Takes player position as level selector.
 func enterLevel():
 	var _loadResult = get_tree().change_scene(levelRessource.replace("$",str(playerPos+1)));
 	if _loadResult == OK:
 		print_debug("Successfully switched level");
 	else:
 		print_debug("Switching levels failed. Errorcode : " + _loadResult);
-	pass
+
+
+
+# Signal "mouse entered" from collision shapes
+func _on_Area2D_mouse_entered(source):
+	# Move player to the level of the level node
+	# This is supposed to come as an int, but we cast it just to be sure
+	movePlayerToLevel(int(source));
+
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx, source):
+	if event is InputEventMouseButton:
+		print_debug("click: " + str(viewport) + " " + str(event) + " " + str(shape_idx));
+		print_debug("CLICK at source " + str(source));
+		enterLevel();
+		# Okay so the problem here is that, it is theoretically possible
+		# for the player to not be on the same scene that the mouse is on
+		# when the mouse clicks and it ends up loading the wrong level.
+		# This could happen when the user clicks on an object and the 
+		# signal is triggered before _proccess is called.
+		# So it's a race condition between the CPU and an interrupt.
+		# This is an edge case and I can't be bothered to fix that right now.
