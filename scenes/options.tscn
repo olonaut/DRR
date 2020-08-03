@@ -51,8 +51,9 @@ script = ExtResource( 3 )
 
 [node name="descriptor" type="Label" parent="MarginContainer/VBoxContainer/MasterSlider"]
 margin_left = 91.0
+margin_top = 1.0
 margin_right = 177.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 86, 14 )
 text = "Master"
 align = 2
@@ -62,12 +63,13 @@ margin_left = 181.0
 margin_right = 693.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 512, 16 )
-value = 100.0
+editable = false
 
 [node name="value" type="Label" parent="MarginContainer/VBoxContainer/MasterSlider"]
 margin_left = 697.0
+margin_top = 1.0
 margin_right = 733.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 36, 14 )
 text = "100%"
 
@@ -77,6 +79,7 @@ margin_right = 824.0
 margin_bottom = 87.0
 alignment = 1
 script = ExtResource( 3 )
+bus = 1
 
 [node name="descriptor" type="Label" parent="MarginContainer/VBoxContainer/MusicSlider"]
 margin_left = 91.0
@@ -92,12 +95,13 @@ margin_left = 181.0
 margin_right = 693.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 512, 16 )
-value = 100.0
+editable = false
 
 [node name="value" type="Label" parent="MarginContainer/VBoxContainer/MusicSlider"]
 margin_left = 697.0
+margin_top = 1.0
 margin_right = 733.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 36, 14 )
 text = "100%"
 
@@ -107,11 +111,13 @@ margin_right = 824.0
 margin_bottom = 107.0
 alignment = 1
 script = ExtResource( 3 )
+bus = 2
 
 [node name="descriptor" type="Label" parent="MarginContainer/VBoxContainer/SFXSlider"]
 margin_left = 91.0
+margin_top = 1.0
 margin_right = 177.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 86, 14 )
 text = "Sound effects"
 
@@ -120,7 +126,7 @@ margin_left = 181.0
 margin_right = 693.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 512, 16 )
-value = 100.0
+editable = false
 
 [node name="value" type="Label" parent="MarginContainer/VBoxContainer/SFXSlider"]
 margin_left = 697.0
@@ -129,6 +135,6 @@ margin_right = 733.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 36, 14 )
 text = "100%"
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/MasterSlider/HSlider" to="MarginContainer/VBoxContainer/MasterSlider" method="_on_HSlider_value_changed" binds= [ 0 ]]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSlider/HSlider" to="MarginContainer/VBoxContainer/MusicSlider" method="_on_HSlider_value_changed" binds= [ 1 ]]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFXSlider/HSlider" to="MarginContainer/VBoxContainer/SFXSlider" method="_on_HSlider_value_changed" binds= [ 2 ]]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/MasterSlider/HSlider" to="MarginContainer/VBoxContainer/MasterSlider" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSlider/HSlider" to="MarginContainer/VBoxContainer/MusicSlider" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFXSlider/HSlider" to="MarginContainer/VBoxContainer/SFXSlider" method="_on_HSlider_value_changed"]
