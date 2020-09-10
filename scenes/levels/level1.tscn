@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://audio/music/HA2.ogg" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Boundray.gd" type="Script" id=3]
+[ext_resource path="res://gfx/icons/olonaut_inv.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 665.532, 36.8316 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 60.9354, 62.891 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,8 +24,30 @@ __meta__ = {
 }
 
 [node name="Boundray" type="Area2D" parent="."]
+position = Vector2( 525, 1250 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Boundray"]
-position = Vector2( 514.27, 1130.12 )
 shape = SubResource( 1 )
+
+[node name="testObj" type="RigidBody2D" parent="."]
+position = Vector2( 525.308, 482.827 )
+scale = Vector2( 2.28, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="testObj"]
+margin_left = 0.290527
+margin_top = 0.0908203
+margin_right = 10.2905
+margin_bottom = 10.0908
+rect_scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testObj"]
+shape = SubResource( 2 )
+[connection signal="area_shape_entered" from="Boundray" to="Boundray" method="_on_Boundray_area_shape_entered"]
+[connection signal="body_entered" from="Boundray" to="Boundray" method="_on_Boundray_body_entered"]
