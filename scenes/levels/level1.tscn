@@ -1,13 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/level1.gd" type="Script" id=1]
 [ext_resource path="res://audio/music/HA2.ogg" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Boundray.gd" type="Script" id=3]
-[ext_resource path="res://gfx/background/background-01.jpeg" type="Texture" id=4]
-[ext_resource path="res://scripts/background_controller.gd" type="Script" id=5]
+[ext_resource path="res://gfx/background/background-01-long.jpeg" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 665.532, 36.8316 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(-0.1,0.0);
+uniform float speed = 0.05;
+
+void fragment()
+{
+	COLOR = texture(TEXTURE, UV + (direction * TIME * speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/direction = Vector2( -0.1, 0 )
+shader_param/speed = 0.05
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,18 +43,11 @@ script = ExtResource( 3 )
 [node name="CollisionShape" type="CollisionShape2D" parent="Boundray"]
 shape = SubResource( 1 )
 
-[node name="Background" type="TextureRect" parent="."]
-margin_left = 1524.0
-margin_top = -8976.0
-margin_right = 11524.0
-margin_bottom = -6976.0
-rect_rotation = 90.0
+[node name="background-01" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 512, -1950 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="area_shape_entered" from="Boundray" to="Boundray" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray" to="Boundray" method="_on_Boundray_body_entered"]
