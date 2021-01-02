@@ -107,3 +107,11 @@ text = "QUIT GAME"
 flat = true
 script = ExtResource( 3 )
 exitsGame = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 387.0
+margin_bottom = 40.0
+text = "##jenkins-buildno##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
