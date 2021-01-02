@@ -53,12 +53,10 @@ __meta__ = {
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 512, 896 )
 script = ExtResource( 5 )
 
 [node name="Player" type="Node2D" parent="Player"]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 6 )
