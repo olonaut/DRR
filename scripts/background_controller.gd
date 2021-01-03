@@ -1,5 +1,8 @@
-extends TextureRect
+extends ParallaxLayer
 
 func _process(delta):
-	var oldPos : Vector2 = self.get_global_position();
-	self.set_global_position(oldPos + Vector2(0,1));
+	#move_child(self.get_child(0),1);
+	set_motion_offset(
+		get_motion_offset()+Vector2(0,0.5)
+	)
+	pass
