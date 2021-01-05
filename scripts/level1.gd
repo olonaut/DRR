@@ -5,6 +5,6 @@ export var bgMusic : AudioStream;
 
 func _ready():
 	music = get_tree().root.get_node("BgMusic");
-	music.stop();
+	music.stop(); # this is technically not necessary but.. you know. just in case.
 	music.stream = bgMusic;
 	music.play();
