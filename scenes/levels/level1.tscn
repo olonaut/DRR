@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/level1.gd" type="Script" id=1]
 [ext_resource path="res://audio/music/HA2.ogg" type="AudioStream" id=2]
@@ -10,6 +10,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 665.532, 36.8316 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 128.257 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -61,5 +64,17 @@ texture = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PoolVector2Array( -42.9119, -4.64575, -45.8883, -12.3843, -41.1261, -15.956, -54.2221, -26.671, -55.2143, -43.1403, -40.5308, -54.8473, -25.0536, -61.1969, -23.0694, -66.5544, -22.0773, -73.1024, -16.9182, -75.4835, 8.08337, -76.2772, 9.0755, -70.3245, 9.0755, -65.9591, 28.3228, -62.3875, 44.792, -53.6567, 56.8259, -42.969, 61.7367, -34.9364, 62.7885, -22.5979, 62.1696, -15.3974, 59.5739, -10.5601, 59.9279, -6.78455, 67.5969, -0.29541, 73.1421, 9.14337, 74.086, 26.251, 79.4574, 32.2535, 86.215, 37.5095, 96.4766, 44.1837, 96.3932, 49.3562, 86.9659, 64.8737, 85.2974, 77.3878, 84.7081, 81.4091, 69.006, 93.993, 45.615, 97.1884, 16.6368, 97.2672, -6.98669, 100.102, -41.8708, 99.472, -70.8865, 94.6821, -76.3987, 83.4216, -74.2726, 73.421, -61.9008, 69.8917, -48.2993, 59.4861, -38.9343, 45.2156, -36.2586, 31.9113, -36.5, 17.2499, -36.125, 1.56244, -40.125, -1.37506 )
+
+[node name="block_left" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 896 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block_left"]
+shape = SubResource( 2 )
+
+[node name="block_right" type="KinematicBody2D" parent="."]
+position = Vector2( 1024, 896 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block_right"]
+shape = SubResource( 2 )
 [connection signal="area_shape_entered" from="Boundray" to="Boundray" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray" to="Boundray" method="_on_Boundray_body_entered"]
