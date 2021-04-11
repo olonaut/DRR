@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 
 
 # Declare member variables here. Examples:
@@ -7,8 +7,7 @@ extends Node2D
 
 
 
-func _process(delta):
+func _init(delta):
 	#move_child(self.get_child(0),1);
-	set_motion_offset(
-		get_motion_offset()+Vector2(0,(30*delta))
-	)
+	add_force(Vector2(0,0),Vector2(0,-150))
+	
