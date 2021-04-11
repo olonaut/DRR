@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Pre') {
-            sh '
+            sh '''
             mkdir -p bin
             BUILDNO=$(git rev-list --count ${GIT_COMMIT})
             ln -sfn ~/Godot_v3.2.1-stable_linux_headless.64 .
@@ -16,7 +16,7 @@ pipeline {
             zip ${JOB_NAME}${BRANCH_NAME}-${BUILDNO}-linux.zip ${JOB_NAME}${BRANCH_NAME}-${BUILDNO}-linux.bin
             rm ${JOB_NAME}${BRANCH_NAME}-${BUILDNO}-win64.exe ${JOB_NAME}${BRANCH_NAME}-${BUILDNO}-win64.pck 
             rm ${JOB_NAME}${BRANCH_NAME}-${BUILDNO}-linux.bin
-            '
+            '''
         }
     }
 }
