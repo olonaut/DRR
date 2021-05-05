@@ -128,6 +128,7 @@ margin_right = 733.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 36, 14 )
 text = "100%"
+
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MasterSlider/HSlider" to="MarginContainer/VBoxContainer/MasterSlider" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSlider/HSlider" to="MarginContainer/VBoxContainer/MusicSlider" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SFXSlider/HSlider" to="MarginContainer/VBoxContainer/SFXSlider" method="_on_HSlider_value_changed"]
