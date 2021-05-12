@@ -17,7 +17,8 @@ pipeline {
         stage('Archive') {
             steps {
                 sh '''
-                cd bin
+                BUILDNO=$(git rev-list --count ${GIT_COMMIT})
+                cd bin  
                 zip drr-${BRANCH_NAME}-${BUILDNO}-win64.zip drr-${BRANCH_NAME}-${BUILDNO}-win64.exe drr-${BRANCH_NAME}-${BUILDNO}-win64.pck
                 zip drr-${BRANCH_NAME}-${BUILDNO}-linux.zip drr-${BRANCH_NAME}-${BUILDNO}-linux.bin
                 rm drr-${BRANCH_NAME}-${BUILDNO}-win64.exe drr-${BRANCH_NAME}-${BUILDNO}-win64.pck
