@@ -55,6 +55,7 @@ __meta__ = {
 position = Vector2( 512, 896 )
 script = ExtResource( 5 )
 speed = 250
+shot_delay = 500
 
 [node name="Pos" type="Node2D" parent="Player"]
 
