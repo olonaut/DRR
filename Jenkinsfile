@@ -24,7 +24,7 @@ pipeline {
                 rm drr-${BRANCH_NAME}-${BUILDNO}-win64.exe drr-${BRANCH_NAME}-${BUILDNO}-win64.pck
                 rm drr-${BRANCH_NAME}-${BUILDNO}-linux.bin
                 '''
-                archiveArtifacts artifacts: 'bin*.zip', fingerprint: true
+                archiveArtifacts artifacts: 'bin/*.zip', fingerprint: true
             }
         }
     }
