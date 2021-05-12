@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh '''
                 mkdir -p bin
+                rm -rf bin/*
                 BUILDNO=$(git rev-list --count ${GIT_COMMIT})
                 ln -sfn ~/Godot_v3.2.3-stable_linux_headless.64 .
                 find . -type f -print0 | xargs -0 sed -i "s/##jenkins-buildno##/$BUILDNO/g"
