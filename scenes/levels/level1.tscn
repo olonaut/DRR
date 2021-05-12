@@ -4,7 +4,7 @@
 [ext_resource path="res://audio/music/HA2.ogg" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Boundray.gd" type="Script" id=3]
 [ext_resource path="res://gfx/background/background-01-long.jpeg" type="Texture" id=4]
-[ext_resource path="res://scripts/debug/player.gd" type="Script" id=5]
+[ext_resource path="res://scripts/player.gd" type="Script" id=5]
 [ext_resource path="res://gfx/sprites/charcrop.png" type="Texture" id=6]
 [ext_resource path="res://scripts/background_controller.gd" type="Script" id=7]
 

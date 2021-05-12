@@ -1,8 +1,12 @@
 extends KinematicBody2D
 
 export var speed : int
+export var shot_delay : int # Delay in Milliseconds
+
 var shot
 var shot_instance
+
+var _delay_countdown
 
 func _ready():
 	shot = preload("res://prefabs/playershot.tscn")
