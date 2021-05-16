@@ -19,7 +19,7 @@ func _physics_process(delta):
 		move_and_slide(Vector2(speed*-1,0));
 	if Input.is_action_pressed("mv_right"):
 		move_and_slide(Vector2(speed,0));
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_pressed("fire"):
 		if _delay_countdown >= shot_delay: fire_shot();
 
 
