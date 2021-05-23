@@ -51,6 +51,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+speed = 400
 
 [node name="block_left" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 896 )
