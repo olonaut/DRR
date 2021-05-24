@@ -1,3 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Whiskey" type="Node2D"]
+[ext_resource path="res://gfx/sprites/whiskey.png" type="Texture" id=1]
+
+[node name="Whiskey" type="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -6.24384, -37.9723, -3.79386, -25.9452, -20.6096, -12.5817, -25.2868, 8.57715, -25.3982, 35.1928, 23.9354, 38.4223, 24.0467, -0.888641, 18.2559, -15.2544, 7.45374, -26.0565, 7.78782, -38.195 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
