@@ -31,8 +31,6 @@ script = ExtResource( 3 )
 [node name="CollisionShape" type="CollisionShape2D" parent="Boundray_Up"]
 shape = SubResource( 1 )
 
-[node name="Proj_Spawn" type="Area2D" parent="."]
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_begin = Vector2( 2, 2 )
 
