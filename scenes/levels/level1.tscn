@@ -66,6 +66,14 @@ position = Vector2( 1024, 896 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block_right"]
 shape = SubResource( 2 )
 
+[node name="Spawn_Proj" type="ReferenceRect" parent="."]
+margin_top = -75.0
+margin_right = 1024.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_body_entered"]
 [connection signal="area_shape_entered" from="Boundray_Up" to="Boundray_Up" method="_on_Boundray_area_shape_entered"]
