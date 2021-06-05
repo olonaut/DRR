@@ -11,6 +11,6 @@ func _process(_delta):
 
 # Open link
 func _on_credit_link_clicked(meta):
-	print("clicked link:", meta) # you can remove this line
+	print_debug("clicked link:", meta) # you can remove this line
 	
 	OS.shell_open(meta)
