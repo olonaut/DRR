@@ -7,3 +7,10 @@ func _process(_delta):
 		var result = get_tree().change_scene(Globalvars.mainMenuScene);
 		if result != 0:
 			print_debug("Level load failed with errorcode: " + result);
+
+
+# Open link
+func _on_credit_link_clicked(meta):
+	print("clicked link:", meta) # you can remove this line
+	
+	OS.shell_open(meta)
