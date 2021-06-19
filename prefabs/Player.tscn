@@ -12,7 +12,7 @@ shot_delay = 0.25
 [node name="Pos" type="Node2D" parent="."]
 
 [node name="Pos_ShotSpawn" type="Node2D" parent="."]
-position = Vector2( -7.5, -72 )
+position = Vector2( -7.5, -100 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
