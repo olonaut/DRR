@@ -1,13 +1,10 @@
+###
+### Shots expect whatever they hit to have a hit() function
+###
 extends RigidBody2D
 
-func _ready():
-	pass
-
-func _proccess():
-	pass
-
-
-
-func _on_RigidBody2D_body_entered(body):
-	print_debug("detected collision");
-	pass # Replace with function body.
+# when hitting another object, die.
+func _on_RigidBody2D_body_entered(_body):
+	_body.hit();
+	queue_free();
+	pass 
