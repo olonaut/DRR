@@ -9,7 +9,7 @@ var shot_instance
 var _delay_countdown : float
 
 func _ready():
-	shot = preload("res://prefabs/playershot.tscn")
+	shot = preload("res://prefabs/Playershot.tscn")
 	
 func _physics_process(delta):
 	# Calculating shot countdown
