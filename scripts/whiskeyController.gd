@@ -11,6 +11,8 @@ func hit():
 	linear_velocity = Vector2(0,0);
 	angular_velocity = 0.0;
 	explisionEffect.emitting = true;
+	self.set_collision_layer(0)
+	self.set_collision_mask(0)
 	sprite.free();
 	yield(get_tree().create_timer(1.25), "timeout")
 	queue_free();
