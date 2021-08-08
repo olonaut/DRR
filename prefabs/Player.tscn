@@ -6,7 +6,7 @@
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 512, 896 )
 script = ExtResource( 1 )
-speed = 500
+speed = 750
 shot_delay = 0.25
 
 [node name="Pos" type="Node2D" parent="."]
