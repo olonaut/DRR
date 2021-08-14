@@ -66,7 +66,7 @@ position = Vector2( 1024, 896 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block_right"]
 shape = SubResource( 2 )
 
-[node name="Spawn_Proj" type="ReferenceRect" parent="."]
+[node name="Spawn" type="ReferenceRect" parent="."]
 margin_top = -75.0
 margin_right = 1024.0
 margin_bottom = -50.0

@@ -9,3 +9,7 @@ func _ready():
 	music.stop(); # this is technically not necessary but.. you know. just in case.
 	music.stream = bgMusic;
 	music.play();
+
+func _process(delta):
+
+	pass
