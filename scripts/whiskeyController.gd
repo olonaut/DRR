@@ -10,7 +10,7 @@ func _ready():
 func hit():
 	linear_velocity = Vector2(0,0);
 	angular_velocity = 0.0;
-	explisionEffect.emitting = true;
+	explisionEffect.set_emitting(true);
 	self.set_collision_layer(0)
 	self.set_collision_mask(0)
 	sprite.free();
