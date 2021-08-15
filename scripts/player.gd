@@ -32,4 +32,8 @@ func fire_shot():
 
 # when hitting another object, die.
 func hit():
+	remove_child(deathAnim)
+	get_tree().get_root().add_child(deathAnim)
+	deathAnim.set_global_position(self.get_global_position())
 	deathAnim.playAnimation();
+	queue_free()
