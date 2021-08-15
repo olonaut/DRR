@@ -11,5 +11,4 @@ func _ready():
 	music.play();
 
 func _process(delta):
-
 	pass
