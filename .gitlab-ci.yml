@@ -15,7 +15,7 @@ build-job:
 archive-job:
   stage: archive
   script:
-    - BUILDNO=$(git rev-list --count ${GIT_COMMIT})
+    - BUILDNO=$(git rev-list --count $CI_COMMIT_SHA)
     - cd bin
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
