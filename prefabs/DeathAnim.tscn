@@ -1,9 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/DeathAnim.gd" type="Script" id=1]
 [ext_resource path="res://gfx/sprites/star_01.png" type="Texture" id=2]
 [ext_resource path="res://gfx/sprites/ringTexture.png" type="Texture" id=3]
 [ext_resource path="res://audio/soundfx/loose1.wav" type="AudioStream" id=4]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.7557, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.335938, 0.408569, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
 
 [sub_resource type="Curve" id=1]
 max_value = 10.0
@@ -20,6 +27,7 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_curve = SubResource( 2 )
+color_ramp = SubResource( 10 )
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.749186, 0.983713 )
