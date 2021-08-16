@@ -11,6 +11,9 @@ build-job:
     - find . -type f -print0 | xargs -0 sed -i "s/##jenkins-builddate##/$(date --iso-8601=minutes)/g"
     - /srv/godot/Godot_v3.3.2-stable_linux_headless.64 --path DRR --export "Linux/X11" bin/drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
     - /srv/godot/Godot_v3.3.2-stable_linux_headless.64 --path DRR --export "Windows Desktop" bin/drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe
+  artifacts:
+    paths:
+    - bin
 
 archive-job:
   stage: archive
