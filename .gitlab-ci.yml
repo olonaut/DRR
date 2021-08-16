@@ -31,4 +31,4 @@ archive-job:
     - rm drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
   artifacts:
     paths:
-      - "*.zip"
+      - "bin/*.zip"
