@@ -15,4 +15,12 @@ build-job:
 archive-job:
   stage: archive
   script:
-    - echo "archive stuff"
+    - BUILDNO=$(git rev-list --count ${GIT_COMMIT})
+    - cd bin
+    - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
+    - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
+    - rm drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
+    - rm drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
+  artifacts:
+    paths:
+      - "*.zip"
