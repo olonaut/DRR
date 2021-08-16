@@ -1,11 +1,6 @@
 stages:
-  - prepare
   - build
   - archive
-
-prepare-job:
-  stage: prepare
-  script:
 
 build-job:
   stage: build
