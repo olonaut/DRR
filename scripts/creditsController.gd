@@ -13,4 +13,5 @@ func _process(_delta):
 func _on_credit_link_clicked(meta):
 	print_debug("clicked link:", meta) # you can remove this line
 	
-	OS.shell_open(meta)
+	if OS.shell_open(meta) != OK:
+		print_debug("Failed to open link!")
