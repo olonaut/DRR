@@ -32,6 +32,7 @@ contacts_reported = 1
 contact_monitor = true
 linear_velocity = Vector2( 0, 250 )
 linear_damp = 0.0
+angular_damp = 0.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -47,5 +48,4 @@ lifetime = 1.25
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 3 )
-
 [connection signal="body_entered" from="." to="." method="_on_Whiskey_body_entered"]
