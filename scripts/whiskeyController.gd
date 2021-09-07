@@ -25,4 +25,4 @@ func hit():
 func _on_Whiskey_body_entered(body):
 	if body.is_in_group("player"):
 		body.hit();
-	pass # Replace with function body.
+		hit();
