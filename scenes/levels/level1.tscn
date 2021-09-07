@@ -76,6 +76,7 @@ __meta__ = {
 
 [node name="Whiskey Test" parent="." instance=ExtResource( 6 )]
 position = Vector2( 517.918, 168.19 )
+
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_body_entered"]
 [connection signal="area_shape_entered" from="Boundray_Up" to="Boundray_Up" method="_on_Boundray_area_shape_entered"]
