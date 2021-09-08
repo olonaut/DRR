@@ -9,7 +9,6 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	self.set_angular_velocity(rng.randf_range(-1.0, 1.0))
-	
 
 func hit():
 	linear_velocity = Vector2(0,0);
@@ -21,8 +20,7 @@ func hit():
 	yield(get_tree().create_timer(1.25), "timeout")
 	queue_free();
 
-
 func _on_Whiskey_body_entered(body):
 	if body.is_in_group("player"):
 		body.hit();
-	pass # Replace with function body.
+		hit();
