@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "levelControler",
+"language": "GDScript",
+"path": "res://scripts/levelControler.gd"
+} ]
 _global_script_class_icons={
-
+"levelControler": ""
 }
 
 [application]
