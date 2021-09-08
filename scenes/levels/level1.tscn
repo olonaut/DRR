@@ -17,6 +17,12 @@ extents = Vector2( 10, 128.257 )
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
 bgMusic = ExtResource( 2 )
+isActive = true
+stage = 1
+totalWaves = 5
+objPerWave = 20
+waveDelay = 3.0
+objDelay = 0.35
 
 [node name="Boundray_Down" type="Area2D" parent="."]
 position = Vector2( 525, 1250 )
@@ -67,8 +73,9 @@ position = Vector2( 1024, 896 )
 shape = SubResource( 2 )
 
 [node name="ObjSpawn" type="ReferenceRect" parent="."]
+margin_left = 50.0
 margin_top = -75.0
-margin_right = 1024.0
+margin_right = 974.0
 margin_bottom = -50.0
 __meta__ = {
 "_edit_use_anchors_": false
