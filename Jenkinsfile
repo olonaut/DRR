@@ -7,8 +7,8 @@ pipeline {
                 mkdir -p bin
                 rm -rf bin/*
                 BUILDNO=$(git rev-list --count ${GIT_COMMIT})
-                find . -type f -print0 | xargs -0 sed -i "s/##jenkins-buildno##/$BUILDNO/g"
-                find . -type f -print0 | xargs -0 sed -i "s/##jenkins-builddate##/$(date --iso-8601=minutes)/g"
+                find . -type f -print0 | xargs -0 sed -i "s/##ci-buildno##/$BUILDNO/g"
+                find . -type f -print0 | xargs -0 sed -i "s/##ci-builddate##/$(date --iso-8601=minutes)/g"
                 /opt/godot/godot.headless --path DRR --export "Linux/X11" bin/drr-${BRANCH_NAME}-${BUILDNO}-linux.bin
                 /opt/godot/godot.headless --path DRR --export "Windows Desktop" bin/drr-${BRANCH_NAME}-${BUILDNO}-win64.exe
                 '''
