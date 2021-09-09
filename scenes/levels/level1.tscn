@@ -21,7 +21,7 @@ isActive = true
 stage = 1
 totalWaves = 5
 objPerWave = 20
-waveDelay = 3.0
+waveDelay = 5.0
 objDelay = 0.35
 
 [node name="Boundray_Down" type="Area2D" parent="."]
