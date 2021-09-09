@@ -1,5 +1,5 @@
 # DRR
-Some game I made as a joke for 3 years
+Some game I made as a joke for too many years
 
 Greetings.
 
