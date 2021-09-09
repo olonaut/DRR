@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed : int
 export var shot_delay : float # Delay in Seconds
+export(NodePath) onready var deathAnim = get_node(deathAnim)
 
 var shot
 var shot_instance
@@ -31,4 +32,8 @@ func fire_shot():
 
 # when hitting another object, die.
 func hit():
-	print_debug("player was hit")
+	remove_child(deathAnim)
+	get_tree().get_root().add_child(deathAnim)
+	deathAnim.set_global_position(self.get_global_position())
+	deathAnim.playAnimation();
+	queue_free()

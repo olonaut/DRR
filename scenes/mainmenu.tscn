@@ -111,7 +111,8 @@ exitsGame = true
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 387.0
 margin_bottom = 40.0
-text = "Build ##jenkins-buildno## | Date: ##jenkins-builddate##"
+text = "Build ##ci-buildno##
+Date: ##ci-builddate##"
 __meta__ = {
 "_edit_use_anchors_": false
 }
