@@ -58,8 +58,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-
 [node name="block_left" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 896 )
 
@@ -83,6 +81,10 @@ __meta__ = {
 
 [node name="Whiskey Test" parent="." instance=ExtResource( 6 )]
 position = Vector2( 517.918, 168.19 )
+
+[node name="PlayerControler" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerControler" instance=ExtResource( 5 )]
 
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_body_entered"]
