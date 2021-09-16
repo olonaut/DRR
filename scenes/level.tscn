@@ -80,6 +80,33 @@ __meta__ = {
 
 [node name="PlayerControler" type="Node2D" parent="."]
 script = ExtResource( 6 )
+health = 3
+
+[node name="UIContainer" type="MarginContainer" parent="PlayerControler"]
+margin_right = 1024.0
+margin_bottom = 40.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerControler/UIContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 55.0
+alignment = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="PlayerControler/UIContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 984.0
+margin_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
 
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_body_entered"]

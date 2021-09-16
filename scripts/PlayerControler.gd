@@ -4,11 +4,13 @@
 extends Node2D
 
 export var health : int;
+var _healthContainer;
 
-var playerRes = preload('res://prefabs/Player.tscn')
+var playerRes = preload('res://prefabs/Player.tscn');
 var activePlayer;
 
 func _ready():
+	_healthContainer = get_node("UIContainer/VBoxContainer/HealthContainer")
 	spawnPlayer();
 
 func playerDied():
@@ -19,3 +21,4 @@ func playerDied():
 func spawnPlayer():
 	var activePlayer = playerRes.instance()
 	add_child(activePlayer)	
+
