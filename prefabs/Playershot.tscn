@@ -2,7 +2,7 @@
 
 [ext_resource path="res://mats/particlemat_1.tres" type="Material" id=1]
 [ext_resource path="res://audio/soundfx/lasershot.wav" type="AudioStream" id=2]
-[ext_resource path="res://scripts/shotController.gd" type="Script" id=3]
+[ext_resource path="res://scripts/shot_controller.gd" type="Script" id=3]
 [ext_resource path="res://gfx/sprites/shot_laser.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]

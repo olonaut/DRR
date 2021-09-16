@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/optionsController.gd" type="Script" id=1]
+[ext_resource path="res://scripts/options_controller.gd" type="Script" id=1]
 [ext_resource path="res://font/titlemenu.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scripts/options/Slider.gd" type="Script" id=3]
+[ext_resource path="res://scripts/options/slider.gd" type="Script" id=3]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
