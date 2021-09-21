@@ -4,15 +4,12 @@ export var speed : int
 export var shot_delay : float # Delay in Seconds
 export(NodePath) onready var deathAnim = get_node(deathAnim)
 
-var shot
+var shot = preload("res://prefabs/Playershot.tscn")
 var shot_instance
 
 var _delay_countdown : float
 
 
-func _ready():
-	shot = preload("res://prefabs/Playershot.tscn")
-	
 func _physics_process(delta):
 	# Calculating shot countdown
 	_delay_countdown = _delay_countdown + delta;
