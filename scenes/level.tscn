@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scripts/level1.gd" type="Script" id=1]
+[ext_resource path="res://scripts/level_controller.gd" type="Script" id=1]
 [ext_resource path="res://audio/music/HA2.ogg" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Boundray.gd" type="Script" id=3]
 [ext_resource path="res://gfx/background/background-01-long.jpeg" type="Texture" id=4]
-[ext_resource path="res://prefabs/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://prefabs/Obj1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/backgroundController.gd" type="Script" id=7]
+[ext_resource path="res://scripts/player_controller.gd" type="Script" id=6]
+[ext_resource path="res://scripts/background_controller.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 665.532, 36.8316 )
@@ -20,9 +19,9 @@ bgMusic = ExtResource( 2 )
 isActive = true
 stage = 1
 totalWaves = 5
-objPerWave = 20
+objPerWave = 25
 waveDelay = 3.0
-objDelay = 0.35
+objDelay = 0.2
 
 [node name="Boundray_Down" type="Area2D" parent="."]
 position = Vector2( 525, 1250 )
@@ -58,8 +57,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-
 [node name="block_left" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 896 )
 
@@ -81,8 +78,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Whiskey Test" parent="." instance=ExtResource( 6 )]
-position = Vector2( 517.918, 168.19 )
+[node name="PlayerControler" type="Node2D" parent="."]
+script = ExtResource( 6 )
+health = 3
+
+[node name="UIContainer" type="MarginContainer" parent="PlayerControler"]
+margin_right = 1024.0
+margin_bottom = 40.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerControler/UIContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 20.0
+alignment = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="PlayerControler/UIContainer/VBoxContainer"]
+margin_right = 984.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
 
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
 [connection signal="body_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_body_entered"]

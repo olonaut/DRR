@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "levelControler",
 "language": "GDScript",
-"path": "res://scripts/levelControler.gd"
+"path": "res://scripts/level_controller.gd"
 } ]
 _global_script_class_icons={
 "levelControler": ""
@@ -25,7 +25,7 @@ run/main_scene="res://scenes/mainmenu.tscn"
 config/custom_user_dir_name="dankeronjaberg"
 boot_splash/image="res://gfx/icons/olonaut_inv.png"
 config/icon="res://icon.png"
-config/macos_native_icon="res://gfx/icons/Danke Ronyaberg .png"
+config/macos_native_icon="res://gfx/icons/danke_ronjaberg.png"
 
 [autoload]
 
