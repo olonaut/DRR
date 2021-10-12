@@ -4,25 +4,30 @@ class_name levelControler
 
 var music : Node;
 export var bgMusic : AudioStream;
-var objSpawn : ReferenceRect
-var objects = [preload('res://prefabs/Obj1.tscn')]
+var objSpawn : ReferenceRect;
+var objects = [preload('res://prefabs/Obj1.tscn')];
+
+# JSON stuff
+var _level_file = File.new();
+var _level_file_path = 'res://data/levels.json';
+var level_data
 
 # level variables
 # this is mostly stuff for spawning enemies
-export var isActive : bool;	# we want the level to stop when the player dies for ex.
-export var stage : int; 	# this controls the boss and the type of objects
-export var totalWaves : int;	# number of waves
-export var objPerWave : int;	# number of objects per wave
-export var waveDelay : float; 	# how long to wait between waves
-export var objDelay : float;	# time between objects
+export var isActive : bool;			# we want the level to stop when the player dies for ex.
+export var phase : int; 			# 0 = normal game, 1 = boss
 
-# keeping track
+# the actual levels
+var levels_dict : Array = [];
+
+# keeping track of stuff
 var waveActive : bool = false;
 var waveNo : int = 0;
 var waveDelta : float = 0.0;
+var stageNo : int = 0;
 
 # misc and utilities
-var rng = RandomNumberGenerator.new()
+var rng = RandomNumberGenerator.new();
 
 func _ready():
 	# get object spawn area
@@ -33,25 +38,35 @@ func _ready():
 	music.stream = bgMusic;
 	music.play();
 	rng.randomize();
+	
+	# JSON stuff
+	_level_file.open(_level_file_path, File.READ);
+	var _level_data_raw = _level_file.get_as_text();
+	_level_file.close();
+	var _level_parse = JSON.parse(_level_data_raw)
+	level_data = _level_parse.result
+	
 
 func _process(delta):
-	if waveNo <= totalWaves:
+	if waveNo < level_data[0]["waves"]:
 		if isActive:
 			if waveActive == false:
 				waveDelta += delta;
-				if waveDelta >= waveDelay:
+				if waveDelta >= level_data[0]["waveDelay"]:
 					wave();
+	
+	#TODO stages
 
 func wave():
 	waveNo += 1
 	print_debug("wave " + str(waveNo))
 	var t = Timer.new()
-	t.set_wait_time(objDelay)
+	t.set_wait_time(level_data[0]["objDelay"])
 	t.set_one_shot(true)
 	self.add_child(t)
 	
 	waveActive = true;
-	for i in objPerWave:
+	for i in level_data[0]["objPerWave"]:
 		spawnObj();
 		t.start()
 		yield(t, "timeout")

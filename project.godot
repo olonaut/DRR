@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Stage",
+"language": "GDScript",
+"path": "res://scripts/stage.gd"
+}, {
 "base": "Node2D",
 "class": "levelControler",
 "language": "GDScript",
 "path": "res://scripts/level_controller.gd"
 } ]
 _global_script_class_icons={
+"Stage": "",
 "levelControler": ""
 }
 
