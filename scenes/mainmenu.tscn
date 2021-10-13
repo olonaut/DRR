@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gfx/icons/danke_ronjaberg.png" type="Texture" id=1]
 [ext_resource path="res://font/titlemenu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/b_menu_button_controller.gd" type="Script" id=3]
+[ext_resource path="res://scenes/level.tscn" type="PackedScene" id=4]
 
 [node name="nTitleScreen" type="Node2D"]
 
@@ -48,6 +49,7 @@ custom_colors/font_color_pressed = Color( 0.682353, 0, 0.752941, 1 )
 text = "START GAME"
 flat = true
 script = ExtResource( 3 )
+newscene = ExtResource( 4 )
 hasFocus = true
 
 [node name="hOptions" type="HBoxContainer" parent="MarginContainer/vMenu"]
