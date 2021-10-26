@@ -2,13 +2,22 @@ extends RigidBody2D
 
 var explisionEffect : Node2D;
 var sprite : Sprite;
+var time = 0.0;
+
+export var movementType : int;
 
 func _ready():
 	explisionEffect = get_child(2)
 	sprite = get_child(0)
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	self.set_angular_velocity(rng.randf_range(-1.0, 1.0))
+	if movementType == 1:
+		self.set_angular_velocity(rng.randf_range(-1.0, 1.0))
+
+func _physics_process(delta):
+	time += delta
+	if movementType == 2:
+		self.linear_velocity = Vector2(sin(PI/2 + time*5)*1000.0,self.linear_velocity.y)
 
 func hit():
 	linear_velocity = Vector2(0,0);
