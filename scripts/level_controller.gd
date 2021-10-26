@@ -5,7 +5,7 @@ class_name levelControler
 var music : Node;
 export var bgMusic : AudioStream;
 var objSpawn : ReferenceRect;
-var objects = [preload('res://prefabs/Obj1.tscn')];
+var objects = [preload('res://prefabs/Obj2.tscn'),preload('res://prefabs/Obj1.tscn')];
 
 # JSON stuff
 var _level_file = File.new();
