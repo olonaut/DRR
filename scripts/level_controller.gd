@@ -1,3 +1,7 @@
+# Level Controller
+# - The Level is made up of Stages
+# - Stages are defined by Waves
+# - Waves spawn Objects
 extends Node2D
 
 class_name levelControler
@@ -55,7 +59,6 @@ func _process(delta):
 				if waveDelta >= level_data[0]["waveDelay"]:
 					wave();
 	
-	#TODO stages
 
 func wave():
 	waveNo += 1
