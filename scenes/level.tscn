@@ -17,11 +17,6 @@ extents = Vector2( 10, 128.257 )
 script = ExtResource( 1 )
 bgMusic = ExtResource( 2 )
 isActive = true
-stage = 1
-totalWaves = 5
-objPerWave = 25
-waveDelay = 3.0
-objDelay = 0.2
 
 [node name="Boundray_Down" type="Area2D" parent="."]
 position = Vector2( 525, 1250 )
@@ -81,6 +76,7 @@ __meta__ = {
 [node name="PlayerControler" type="Node2D" parent="."]
 script = ExtResource( 6 )
 health = 3
+respawnTimeout = 2.5
 
 [node name="UIContainer" type="MarginContainer" parent="PlayerControler"]
 margin_right = 1024.0

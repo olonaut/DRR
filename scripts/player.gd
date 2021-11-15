@@ -12,7 +12,7 @@ var _delay_countdown : float
 
 func _physics_process(delta):
 	# Calculating shot countdown
-	_delay_countdown = _delay_countdown + delta;
+	_delay_countdown += delta;
 	# Function Binding
 	if Input.is_action_pressed("mv_left"):
 		move_and_slide(Vector2(speed*-1,0));
