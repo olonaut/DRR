@@ -37,7 +37,7 @@ archive-job:
 upload-job:
   stage: upload
   dependencies:
-    - archive job
+    - archive-job
   only:
     refs:
       - master
