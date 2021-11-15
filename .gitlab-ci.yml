@@ -42,4 +42,4 @@ upload-job:
     refs:
       - master
   script:
-    - ls -hla
+    - rsync -ar bin/* gitlab-upload@fastdl.olonaut.de:/var/www/html/DRR/.
