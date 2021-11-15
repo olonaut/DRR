@@ -49,27 +49,27 @@ func _ready():
 	_level_file.close();
 	var _level_parse = JSON.parse(_level_data_raw)
 	level_data = _level_parse.result
-	
+	#deteleme	
+	print_debug(str(level_data[waveNo].objects))
 
 func _process(delta):
-	if waveNo < level_data[0]["waves"]:
+	if waveNo < level_data[stageNo]["waves"]:
 		if isActive:
 			if waveActive == false:
 				waveDelta += delta;
-				if waveDelta >= level_data[0]["waveDelay"]:
+				if waveDelta >= level_data[stageNo]["waveDelay"]:
 					wave();
-	
 
 func wave():
 	waveNo += 1
 	print_debug("wave " + str(waveNo))
 	var t = Timer.new()
-	t.set_wait_time(level_data[0]["objDelay"])
+	t.set_wait_time(level_data[stageNo]["objDelay"])
 	t.set_one_shot(true)
 	self.add_child(t)
 	
 	waveActive = true;
-	for i in level_data[0]["objPerWave"]:
+	for i in level_data[stageNo]["objPerWave"]:
 		spawnObj();
 		t.start()
 		yield(t, "timeout")
@@ -79,10 +79,10 @@ func wave():
 	waveDelta = 0.0;
 
 func spawnObj():
+	# TODO roll object from chance
 	# generate and calculate position
 	var pos_offset : Vector2 = Vector2(rng.randi_range(0,objSpawn.rect_size.x),0)
 	var pos : Vector2 = objSpawn.rect_position + pos_offset
 	var _obj = objects[0].instance()
 	_obj.position = pos;
 	add_child(_obj)
-	
