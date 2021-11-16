@@ -49,8 +49,9 @@ func _ready():
 	_level_file.close();
 	var _level_parse = JSON.parse(_level_data_raw)
 	level_data = _level_parse.result
-	#deteleme	
-	print_debug(str(level_data[waveNo].objects))
+	#delet me
+	
+	print_debug(str(level_data[stageNo].objects))
 
 func _process(delta):
 	if waveNo < level_data[stageNo]["waves"]:
@@ -86,3 +87,11 @@ func spawnObj():
 	var _obj = objects[0].instance()
 	_obj.position = pos;
 	add_child(_obj)
+
+func stage():
+	# generate random shit
+	# add all chances together
+	# generate array with length of all chances
+	# populate array with object IDs
+	# now we can generate a random number with max length of the array, and use the result as the index of the array. this gives us the object to be used
+	pass
