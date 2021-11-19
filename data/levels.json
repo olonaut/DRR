@@ -5,7 +5,8 @@
         "waveDelay": 5,
         "objDelay": 0.5,
         "objects": {
-            "1": 10
+	    "0": 5,
+            "1": 5
         }
     },
     {
