@@ -1,4 +1,4 @@
 extends Area2D
 
 func _on_Boundray_body_entered(body):
-	body.queue_free();
+	body.free();
