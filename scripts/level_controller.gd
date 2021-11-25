@@ -26,8 +26,8 @@ var levels_dict : Array = [];
 
 # keeping track of stuff
 var waveActive : bool = false;
-var waveNo : int = 0;
 var waveDelta : float = 0.0;
+var waveNo : int = 0;
 var stageNo : int = 0;
 
 # misc and utilities
@@ -49,17 +49,18 @@ func _ready():
 	_level_file.close();
 	var _level_parse = JSON.parse(_level_data_raw)
 	level_data = _level_parse.result
-	#delet me
 	
-	print_debug(str(level_data[stageNo].objects))
-
 func _process(delta):
-	if waveNo < level_data[stageNo]["waves"]:
+	if stageNo < level_data.size():
 		if isActive:
-			if waveActive == false:
-				waveDelta += delta;
-				if waveDelta >= level_data[stageNo]["waveDelay"]:
-					wave();
+			if waveNo < level_data[stageNo]["waves"]:
+				if waveActive == false:
+					waveDelta += delta;
+					if waveDelta >= level_data[stageNo]["waveDelay"]:
+						wave();
+			else:
+				waveNo = 0
+				stageNo += 1
 
 func wave():
 	waveNo += 1
@@ -89,6 +90,8 @@ func spawnObj():
 	add_child(_obj)
 
 func stage():
+	for obj in level_data[stageNo].objects:
+		print_debug("object" + str(obj) + " has a chance of " + str(level_data[stageNo].objects[obj]) + " / 10")
 	# generate random shit
 	# add all chances together
 	# generate array with length of all chances
