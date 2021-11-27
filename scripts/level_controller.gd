@@ -30,6 +30,8 @@ var waveDelta : float = 0.0;
 var waveNo : int = 0;
 var stageNo : int = 0;
 
+var chanceObjMap : Array = [];
+
 # misc and utilities
 var rng = RandomNumberGenerator.new();
 
@@ -49,6 +51,8 @@ func _ready():
 	_level_file.close();
 	var _level_parse = JSON.parse(_level_data_raw)
 	level_data = _level_parse.result
+	
+	stageInit();
 	
 func _process(delta):
 	if stageNo < level_data.size():
@@ -89,12 +93,15 @@ func spawnObj():
 	_obj.position = pos;
 	add_child(_obj)
 
-func stage():
+func stageInit():
+	# populate the chanceObjMap array
+	var _mapindex = 0;
+	print_debug("populating...")
 	for obj in level_data[stageNo].objects:
-		print_debug("object" + str(obj) + " has a chance of " + str(level_data[stageNo].objects[obj]) + " / 10")
-	# generate random shit
-	# add all chances together
-	# generate array with length of all chances
-	# populate array with object IDs
+		print_debug("object" + str(obj) + " has a chance of " + str(level_data[stageNo].objects[obj]) + " / 10");
+		for i in level_data[stageNo].objects[obj]:
+			chanceObjMap.append(obj);
+			_mapindex += 1;
+	print_debug(str(chanceObjMap))
+	
 	# now we can generate a random number with max length of the array, and use the result as the index of the array. this gives us the object to be used
-	pass

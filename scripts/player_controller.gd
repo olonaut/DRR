@@ -22,6 +22,15 @@ func playerDied():
 	updateHealth();
 	isAlive = false;
 	
+	var t = Timer.new()
+	t.set_wait_time(respawnTimeout)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+
+	spawnPlayer();
+	
 func _process(delta):
 	pass;
 	
