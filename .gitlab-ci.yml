@@ -4,6 +4,7 @@ variables:
 stages:
   - build
   - archive
+  - upload
 
 build-job:
   stage: build
@@ -32,3 +33,13 @@ archive-job:
   artifacts:
     paths:
       - "bin/*.zip"
+
+upload-job:
+  stage: upload
+  dependencies:
+    - archive-job
+  only:
+    refs:
+      - master
+  script:
+    - rsync -ar bin/* gitlab-upload@fastdl.olonaut.de:/var/www/html/DRR/.
