@@ -51,7 +51,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]Development - Theodor Dickens - [url=https://twitter.com/0none_]@0none_[/url][/center]"
+bbcode_text = "[center]Development - Theodor Dickens - [url=https://github.com/olonaut]@0none_[/url][/center]"
 text = "Development - Theodor Dickens - @0none_"
 scroll_active = false
 __meta__ = {
