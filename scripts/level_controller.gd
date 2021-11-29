@@ -89,7 +89,7 @@ func spawnObj():
 	# generate and calculate position
 	var pos_offset : Vector2 = Vector2(rng.randi_range(0,objSpawn.rect_size.x),0)
 	var pos : Vector2 = objSpawn.rect_position + pos_offset
-	var _obj = objects[0].instance()
+	var _obj = objects[int(chanceObjMap[rng.randi_range(0,9)])].instance()
 	_obj.position = pos;
 	add_child(_obj)
 
