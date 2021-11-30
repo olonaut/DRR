@@ -20,8 +20,9 @@ func _physics_process(delta):
 		self.linear_velocity = Vector2(sin(PI/2 + time*5)*1000.0,self.linear_velocity.y)
 
 func hit():
-	linear_velocity = Vector2(0,0);
-	angular_velocity = 0.0;
+	movementType = 0;
+	self.linear_velocity = Vector2(0,0);
+	self.angular_velocity = 0.0;
 	explisionEffect.set_emitting(true);
 	self.set_collision_layer(0)
 	self.set_collision_mask(0)
