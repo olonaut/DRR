@@ -69,9 +69,9 @@ collision_mask = 4
 shape = SubResource( 2 )
 
 [node name="ObjSpawn" type="ReferenceRect" parent="."]
-margin_left = 50.0
+margin_left = 75.0
 margin_top = -75.0
-margin_right = 974.0
+margin_right = 949.0
 margin_bottom = -50.0
 __meta__ = {
 "_edit_use_anchors_": false
