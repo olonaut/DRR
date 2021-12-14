@@ -29,7 +29,8 @@ func playerDied():
 	t.start()
 	yield(t, "timeout")
 
-	spawnPlayer();
+	if (health > 0):
+		spawnPlayer();
 	
 func _process(delta):
 	pass;
