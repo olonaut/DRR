@@ -81,6 +81,7 @@ __meta__ = {
 script = ExtResource( 6 )
 health = 3
 respawnTimeout = 2.5
+invulnTimeout = 3.0
 
 [node name="UIContainer" type="MarginContainer" parent="PlayerControler"]
 margin_right = 1024.0

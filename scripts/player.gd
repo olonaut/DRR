@@ -1,14 +1,14 @@
 extends KinematicBody2D
 
-export var speed : int
-export var shot_delay : float # Delay in Seconds
 export(NodePath) onready var deathAnim = get_node(deathAnim)
-
 var shot = preload("res://prefabs/Playershot.tscn")
 var shot_instance
 
-var _delay_countdown : float
+export var speed : int
+export var shot_delay : float # Delay in Seconds
+var invuln : bool = false
 
+var _delay_countdown : float
 
 func _physics_process(delta):
 	# Calculating shot countdown
@@ -29,6 +29,8 @@ func fire_shot():
 
 # when hitting another object, die.
 func hit():
+	if (invuln):
+		return
 	# notify playercontroller
 	get_parent().playerDied();
 	# play death animation

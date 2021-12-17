@@ -4,6 +4,7 @@ extends Node2D
 
 export var health : int;
 export var respawnTimeout : float;
+export var invulnTimeout : float;
 
 var healthContainer;
 var healthRes = preload('res://prefabs/Heart.tscn');
@@ -39,6 +40,16 @@ func spawnPlayer():
 	var activePlayer = playerRes.instance();
 	add_child(activePlayer);
 	isAlive = true;
+	activePlayer.invuln = true
+	
+	var t = Timer.new()
+	t.set_wait_time(invulnTimeout)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+
+	activePlayer.invuln = false;
 
 func updateHealth():
 	for n in healthContainer.get_children():
