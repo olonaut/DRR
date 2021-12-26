@@ -6,10 +6,14 @@ extends Node2D
 
 class_name levelControler
 
+# music stuff
 var music : Node;
 export var bgMusic : AudioStream;
+
+# references to other objects
 var objSpawn : ReferenceRect;
 var objects = [preload('res://prefabs/Obj1.tscn'),preload('res://prefabs/Obj2.tscn')];
+var bossController : Node2D;
 
 # JSON stuff
 var _level_file = File.new();
@@ -19,7 +23,6 @@ var level_data
 # level variables
 # this is mostly stuff for spawning enemies
 export var isActive : bool;			# we want the level to stop when the player dies for ex.
-export var phase : int; 			# 0 = normal game, 1 = boss
 
 # the actual levels
 var levels_dict : Array = [];
@@ -38,6 +41,10 @@ var rng = RandomNumberGenerator.new();
 func _ready():
 	# get object spawn area
 	objSpawn = get_node("ObjSpawn");
+	
+	# Get Boss controller
+	bossController = get_node("BossController")
+
 	# play music
 	music = get_tree().root.get_node("BgMusic");
 	music.stop(); # this is technically not necessary but.. you know. just in case.
@@ -65,6 +72,9 @@ func _process(delta):
 			else:
 				waveNo = 0
 				stageNo += 1
+	else: # after all stages and waves have passed...
+		bossController.start();
+		#todo spawn boss
 
 func wave():
 	waveNo += 1
