@@ -110,7 +110,6 @@ grow_vertical = 0
 alignment = 2
 
 [node name="BossController" type="Node2D" parent="."]
-position = Vector2( 512, 64 )
 script = ExtResource( 5 )
 
 [connection signal="area_shape_entered" from="Boundray_Down" to="Boundray_Down" method="_on_Boundray_area_shape_entered"]
