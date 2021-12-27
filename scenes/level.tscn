@@ -23,7 +23,7 @@ collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundray_Down"]
-polygon = PoolVector2Array( -525, -149, 550, -150, 550, -1400, -600, -1400, -600, -150, -525, -149, -525, -50, -700, -50, -700, -1475, 650, -1475, 650, -50, -525, -50 )
+polygon = PoolVector2Array( -700, -50, -600, -150, 550, -150, 550, -1400, -600, -1400, -600, -150, -700, -50, -700, -1475, 650, -1475, 650, -50 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_begin = Vector2( 2, 2 )
