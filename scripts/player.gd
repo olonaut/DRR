@@ -9,7 +9,7 @@ export var shot_delay : float # Delay in Seconds
 var invuln : bool = false
 
 var _delay_countdown : float
-
+	
 func _physics_process(delta):
 	# Calculating shot countdown
 	_delay_countdown += delta;
