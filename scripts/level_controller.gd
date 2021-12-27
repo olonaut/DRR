@@ -32,6 +32,7 @@ var waveActive : bool = false;
 var waveDelta : float = 0.0;
 var waveNo : int = 0;
 var stageNo : int = 0;
+var state : int = 0;
 
 var chanceObjMap : Array = [];
 
@@ -51,6 +52,7 @@ func _ready():
 	music.stream = bgMusic;
 	music.play();
 	rng.randomize();
+	
 	
 	# JSON stuff
 	_level_file.open(_level_file_path, File.READ);
@@ -73,9 +75,10 @@ func _process(delta):
 				waveNo = 0
 				stageNo += 1
 	else: # after all stages and waves have passed...
-		bossController.start();
-		#todo spawn boss
-
+		if state == 0 && waveActive == false:
+			state = 1;
+			bossController.start();
+		
 func wave():
 	waveNo += 1
 	print_debug("wave " + str(waveNo))
@@ -95,8 +98,6 @@ func wave():
 	waveDelta = 0.0;
 
 func spawnObj():
-	# TODO roll object from chance
-	# generate and calculate position
 	var pos_offset : Vector2 = Vector2(rng.randi_range(0,objSpawn.rect_size.x),0)
 	var pos : Vector2 = objSpawn.rect_position + pos_offset
 	var _obj = objects[int(chanceObjMap[rng.randi_range(0,9)])].instance()
@@ -113,5 +114,3 @@ func stageInit():
 			chanceObjMap.append(obj);
 			_mapindex += 1;
 	print_debug(str(chanceObjMap))
-	
-	# now we can generate a random number with max length of the array, and use the result as the index of the array. this gives us the object to be used

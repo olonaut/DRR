@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://gfx/sprites/foe/foe2.png" type="Texture" id=1]
 [ext_resource path="res://prefabs/watAnimated.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/boss_controller.gd" type="Script" id=3]
 
 [node name="Boss" type="KinematicBody2D"]
 position = Vector2( 512, 128 )
-script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
