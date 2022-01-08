@@ -114,3 +114,16 @@ func stageInit():
 			chanceObjMap.append(obj);
 			_mapindex += 1;
 	print_debug(str(chanceObjMap))
+
+func startBoss():
+	# wait 3 seconds
+	print_debug("starting timer")
+	var t = Timer.new()
+	t.set_wait_time(3)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t,"timeout")
+	print_debug("timer over")
+
+	bossController.start()
