@@ -23,7 +23,7 @@ func hit():
 	health -= 1
 	print_debug("health: " + str(health))
 	if health == 0:
-		print_debug("dead")
+		death()
 
 func death():
 	print_debug("boss is dead now x.x")
