@@ -10,12 +10,21 @@ var rng = RandomNumberGenerator.new()
 export(NodePath) var objSpawnRef
 var objSpawnPos
 
+# children
+var deathAnim;
+var sprite;
+
 func _ready():
 	rng.randomize()
 	objects = get_parent().get_parent().objects
 	print_debug(str(objects))
 	objSpawnPos = get_node(objSpawnRef).get_position();
 	print_debug(str(objSpawnPos))
+	
+	deathAnim = get_node("DeathAnim")
+	sprite = get_node("Sprite")
+
+	# start attack on player
 	burst(7)
 	pass # Replace with function body.
 
@@ -27,7 +36,9 @@ func hit():
 
 func death():
 	print_debug("boss is dead now x.x")
-
+	sprite.hide()
+	deathAnim.show()
+	deathAnim.playing = true
 # emits a burst of objects.
 # supply type and ammount, optional angle.
 # type is any valid object ID, or -1 for mixed mode.
