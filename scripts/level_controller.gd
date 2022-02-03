@@ -14,7 +14,7 @@ export var bgMusic : AudioStream
 var objSpawn : ReferenceRect
 var objects = [preload('res://prefabs/Obj1.tscn'),preload('res://prefabs/Obj2.tscn')]
 var bossController : Node2D
-
+var pausePopup : PopupMenu
 # JSON stuff
 var _level_file = File.new()
 var _level_file_path = 'res://data/levels.json'
@@ -46,13 +46,15 @@ func _ready():
 	# Get Boss controller
 	bossController = get_node("BossController")
 
+	# Get Pause Popup
+	pausePopup = get_node("PausePopup")
+
 	# play music
 	music = get_tree().root.get_node("BgMusic")
 	music.stop() # this is technically not necessary but.. you know. just in case.
 	music.stream = bgMusic
 	music.play()
 	rng.randomize()
-	
 	
 	# JSON stuff
 	_level_file.open(_level_file_path, File.READ)
@@ -62,8 +64,13 @@ func _ready():
 	level_data = _level_parse.result
 	
 	stageInit()
-	
+
 func _process(delta):
+	if Input.is_action_just_released("ui_menu"):
+		print_debug("pause");
+		pausePopup.popup_centered()
+		get_tree().paused = not get_tree().paused
+	
 	if stageNo < level_data.size():
 		if isActive:
 			if waveNo < level_data[stageNo]["waves"]:
@@ -77,7 +84,7 @@ func _process(delta):
 	else: # after all stages and waves have passed...
 		if state == 0 && waveActive == false:
 			state = 1
-			startBoss();
+			startBoss()
 		
 func wave():
 	waveNo += 1

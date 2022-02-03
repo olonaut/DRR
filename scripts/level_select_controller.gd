@@ -47,7 +47,7 @@ func _ready():
 
 func _process(_delta):
 	# Back to main Menu on ui_cancel signal
-	if Input.is_action_pressed("ui_cancel"):
+		if Input.is_action_pressed("ui_cancel"):
 		var _loadResult = get_tree().change_scene(Globalvars.mainMenuScene);
 		if _loadResult == OK:
 			print_debug("Successfully switched level");
