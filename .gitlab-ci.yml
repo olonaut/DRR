@@ -10,7 +10,7 @@ build-job:
   stage: build
   script:
     - mkdir -p bin
-    - BUILDNO=$(date +%Y-%m-%d-$CI_COMMIT_SHA)
+    - BUILDNO=$(date +%Y-%m-%d-$CI_PIPELINE_IID)
     - find . -type f -print0 | xargs -0 sed -i "s/##ci-buildno##/$BUILDNO/g"
     - find . -type f -print0 | xargs -0 sed -i "s/##ci-builddate##/$(date --iso-8601=minutes)/g"
     - /srv/godot/Godot_v3.3.2-stable_linux_headless.64 --path DRR --export-debug "Linux/X11" bin/drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
@@ -25,7 +25,7 @@ archive-job:
     - build-job
   script:
     - cd bin
-    - BUILDNO=$(date +%Y-%m-%d-$CI_COMMIT_SHA)
+    - BUILDNO=$(date +%Y-%m-%d-$CI_PIPELINE_IID)
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
     - rm drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
