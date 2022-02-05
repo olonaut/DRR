@@ -24,8 +24,8 @@ archive-job:
   dependencies: 
     - build-job
   script:
-    - BUILDNO=$(git rev-list --count $CI_COMMIT_SHA)
     - cd bin
+    - BUILDNO=$(date +%Y-%m-%d-$CI_COMMIT_SHA)
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
     - zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.zip drr-$CI_COMMIT_BRANCH-${BUILDNO}-linux.bin
     - rm drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.exe drr-$CI_COMMIT_BRANCH-${BUILDNO}-win64.pck
