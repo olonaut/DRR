@@ -1,12 +1,32 @@
 [
     {
-        "waves": 1,
-        "objPerWave": 1,
+        "waves": 3,
+        "objPerWave": 20,
         "waveDelay": 5,
         "objDelay": 0.5,
         "objects": {
-	    "0": 1,
-        "1": 9
+	    "0": 8,
+            "1": 2
+        }
+    },
+    {
+        "waves": 5,
+        "objPerWave": 15,
+        "waveDelay": 3.5,
+        "objDelay": 0.4,
+        "objects": {
+            "0": 6,
+            "1": 4
+        }
+    },
+    {
+        "waves": 5,
+        "objPerWave": 25,
+        "objDelay": 0.3,
+        "waveDelay": 2,
+        "objects": {
+            "0": 5,
+            "1": 5
         }
     }
 ]
