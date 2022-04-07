@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gfx/sprites/foe/foe2.png" type="Texture" id=1]
 [ext_resource path="res://prefabs/watAnimated.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/boss.gd" type="Script" id=3]
+[ext_resource path="res://themes/health.tres" type="Theme" id=4]
 
 [node name="Boss" type="KinematicBody2D"]
-position = Vector2( 512, 128 )
+position = Vector2( 512, 144 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 3 )
 health = 64
 objBaseAngle = 1.0
 objSpawnRef = NodePath("ObjSpawn")
+healthBarRef = NodePath("HealthBar")
 
 [node name="DeathAnim" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
@@ -25,3 +27,13 @@ polygon = PoolVector2Array( -132, 29, -142, 41, -149, 57, -129, 68, -141, 83, -1
 
 [node name="ObjSpawn" type="Node2D" parent="."]
 position = Vector2( 0, 175 )
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+margin_left = -64.0
+margin_top = -140.0
+margin_right = 64.0
+margin_bottom = -117.0
+theme = ExtResource( 4 )
+max_value = 2.0
+value = 1.0
+percent_visible = false

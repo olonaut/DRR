@@ -9,6 +9,7 @@ var objects
 var rng = RandomNumberGenerator.new()
 export(NodePath) var objSpawnRef
 var objSpawnPos
+export(NodePath) var healthBarRef
 
 # children
 var deathAnim;
@@ -24,12 +25,17 @@ func _ready():
 	deathAnim = get_node("DeathAnim")
 	sprite = get_node("Sprite")
 
+	# Health Bar Stuff
+	get_node(healthBarRef).set_max(health)
+	get_node(healthBarRef).set_value(health)
+
 	# start attack on player
 	burst(7)
 	pass # Replace with function body.
 
 func hit():
 	health -= 1
+	get_node(healthBarRef).set_value(health)
 	print_debug("health: " + str(health))
 	if health == 0:
 		death()
