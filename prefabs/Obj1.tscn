@@ -49,5 +49,4 @@ lifetime = 1.25
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 3 )
-
 [connection signal="body_entered" from="." to="." method="_on_Whiskey_body_entered"]
