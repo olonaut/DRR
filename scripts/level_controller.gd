@@ -36,6 +36,10 @@ var state : int = 0
 
 var chanceObjMap : Array = []
 
+# cheat stuff ;)
+var cheat_bossskip = "boss"
+var cheat_map = "    "
+
 # misc and utilities
 var rng = RandomNumberGenerator.new()
 
@@ -135,3 +139,19 @@ func startBoss():
 
 	# todo add object burst
 	bossController.start()
+
+func cheat_processor(scancode):
+	cheat_map += scancode
+	cheat_map.erase(0,1)
+	if cheat_map == cheat_bossskip:
+		print_debug("Cheat Active: BOSS SKIP")
+		waveActive = false
+		state = 1
+		stageNo = level_data.size()
+		startBoss()
+	pass
+
+func _input(ev):
+	if ev is InputEventKey and ev.pressed:
+		cheat_processor(char(ev.unicode))
+	pass
