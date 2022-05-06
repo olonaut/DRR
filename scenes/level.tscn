@@ -45,9 +45,6 @@ margin_bottom = 5013.0
 rect_rotation = 270.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="block_left" type="KinematicBody2D" parent="."]
 position = Vector2( 0, 896 )
