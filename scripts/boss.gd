@@ -36,7 +36,7 @@ func _ready():
 func hit():
 	health -= 1
 	get_node(healthBarRef).set_value(health)
-	print_debug("health: " + str(health))
+#	print_debug("health: " + str(health))
 	if health == 0:
 		death()
 
@@ -44,6 +44,7 @@ func death():
 	print_debug("boss is dead now x.x")
 	sprite.hide()
 	deathAnim.show()
+	get_node(healthBarRef).hide()
 	deathAnim.playing = true
 # emits a burst of objects.
 # supply type and ammount, optional angle.
