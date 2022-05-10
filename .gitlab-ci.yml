@@ -1,6 +1,3 @@
-variables:
-  GIT_DEPTH: 99999
-
 stages:
   - test
   - build
