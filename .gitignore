@@ -2,4 +2,3 @@ bin/*
 bin/*.nro
 bin/*.pck
 .vscode/
-.import/
