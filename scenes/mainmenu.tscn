@@ -13,18 +13,12 @@
 margin_right = 1024.0
 margin_bottom = 1024.0
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 50.0
 margin_top = 250.0
 margin_right = 974.0
 margin_bottom = 550.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
 
