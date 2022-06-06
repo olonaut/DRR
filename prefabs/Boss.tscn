@@ -37,3 +37,5 @@ theme = ExtResource( 4 )
 max_value = 2.0
 value = 1.0
 percent_visible = false
+
+[connection signal="animation_finished" from="DeathAnim" to="." method="_on_DeathAnim_animation_finished"]

@@ -46,6 +46,7 @@ func death():
 	deathAnim.show()
 	get_node(healthBarRef).hide()
 	deathAnim.playing = true
+
 # emits a burst of objects.
 # supply type and ammount, optional angle.
 # type is any valid object ID, or -1 for mixed mode.
@@ -63,3 +64,8 @@ func burst(ammount:int, angle:float = 0.1):
 		obj.set_position(objSpawnPos)
 		add_child(obj)
 	pass
+
+
+func _on_DeathAnim_animation_finished():
+	self.queue_free();
+	pass # Replace with function body.
