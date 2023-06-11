@@ -1,11 +1,12 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export(NodePath) onready var deathAnim = get_node(deathAnim)
+@export
+var deathAnim: Node
 var shot = preload("res://prefabs/Playershot.tscn")
 var shot_instance
 
-export var speed : int
-export var shot_delay : float # Delay in Seconds
+@export var speed : int
+@export var shot_delay : float # Delay in Seconds
 var invuln : bool = false
 
 var _delay_countdown : float
@@ -18,14 +19,16 @@ func _physics_process(delta):
 	_delay_countdown = _delay_countdown + delta;
 	# Function Binding
 	if Input.is_action_pressed("mv_left"):
-		move_and_slide(Vector2(speed*-1,0));
+		set_velocity(Vector2(speed*-1,0))
+		move_and_slide();
 	if Input.is_action_pressed("mv_right"):
-		move_and_slide(Vector2(speed,0));
+		set_velocity(Vector2(speed,0))
+		move_and_slide();
 	if Input.is_action_pressed("fire"):
 		if _delay_countdown >= shot_delay: fire_shot();
 
 func fire_shot():
-	shot_instance = shot.instance()
+	shot_instance = shot.instantiate()
 	shot_instance.position = get_node("Pos_ShotSpawn").get_global_position();
 	get_parent().add_child(shot_instance);
 	_delay_countdown = 0.0;

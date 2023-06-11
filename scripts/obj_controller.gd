@@ -1,10 +1,10 @@
 extends RigidBody2D
 
 var explisionEffect : Node2D;
-var sprite : Sprite;
+var sprite : Sprite2D;
 var time = 0.0;
 
-export var movementType : int;
+@export var movementType : int;
 
 func _ready():
 	explisionEffect = get_child(2)
@@ -27,7 +27,7 @@ func hit():
 	self.set_collision_layer(0)
 	self.set_collision_mask(0)
 	sprite.free();
-	yield(get_tree().create_timer(1.25), "timeout")
+	await get_tree().create_timer(1.25).timeout
 	queue_free();
 
 func _on_Whiskey_body_entered(body):

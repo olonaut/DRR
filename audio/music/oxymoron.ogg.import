@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/oxymoron.ogg-c979e37048f1e46793dc35d2a97034db.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpcvkmtlfo8dc"
+path="res://.godot/imported/oxymoron.ogg-c979e37048f1e46793dc35d2a97034db.oggvorbisstr"
 
 [deps]
 
 source_file="res://audio/music/oxymoron.ogg"
-dest_files=[ "res://.import/oxymoron.ogg-c979e37048f1e46793dc35d2a97034db.oggstr" ]
+dest_files=["res://.godot/imported/oxymoron.ogg-c979e37048f1e46793dc35d2a97034db.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

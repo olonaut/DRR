@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/hurt.wav-fe314905f05639fababd8e1bbc83c5dd.sample"
+type="AudioStreamWAV"
+uid="uid://cwldtj0bmpa4x"
+path="res://.godot/imported/hurt.wav-fe314905f05639fababd8e1bbc83c5dd.sample"
 
 [deps]
 
 source_file="res://audio/soundfx/hurt.wav"
-dest_files=[ "res://.import/hurt.wav-fe314905f05639fababd8e1bbc83c5dd.sample" ]
+dest_files=["res://.godot/imported/hurt.wav-fe314905f05639fababd8e1bbc83c5dd.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

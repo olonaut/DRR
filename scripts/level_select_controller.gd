@@ -48,7 +48,7 @@ func _ready():
 func _process(_delta):
 	# Back to main Menu on ui_cancel signal
 		if Input.is_action_pressed("ui_cancel"):
-		var _loadResult = get_tree().change_scene(Globalvars.mainMenuScene);
+		var _loadResult = get_tree().change_scene_to_file(Globalvars.mainMenuScene);
 		if _loadResult == OK:
 			print_debug("Successfully switched level");
 		else:
@@ -91,7 +91,7 @@ func playermovement():
 # Enter level.
 # Takes player position as level selector.
 func enterLevel():
-	var _loadResult = get_tree().change_scene(levelRessource.replace("$",str(playerPos+1)));
+	var _loadResult = get_tree().change_scene_to_file(levelRessource.replace("$",str(playerPos+1)));
 	if _loadResult == OK:
 		print_debug("Successfully switched level");
 	else:

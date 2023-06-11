@@ -6,6 +6,6 @@ var bossInstance;
 
 func start():
 	print_debug("Starting...");
-	bossInstance = bossPrefab.instance();
+	bossInstance = bossPrefab.instantiate();
 	add_child(bossInstance);
 

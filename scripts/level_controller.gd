@@ -8,7 +8,7 @@ class_name levelControler
 
 # music stuff
 var music : Node
-export var bgMusic : AudioStream
+@export var bgMusic : AudioStream
 
 # references to other objects
 var objSpawn : ReferenceRect
@@ -16,13 +16,12 @@ var objects = [preload('res://prefabs/Obj1.tscn'),preload('res://prefabs/Obj2.ts
 var bossController : Node2D
 var pausePopup : PopupMenu
 # JSON stuff
-var _level_file = File.new()
-var _level_file_path = 'res://data/levels.json'
+var _level_file = FileAccess.open('res://data/levels.json', FileAccess.READ)
 var level_data
 
 # level variables
 # this is mostly stuff for spawning enemies
-export var isActive : bool			# we want the level to stop when the player dies for ex.
+@export var isActive : bool			# we want the level to stop when the player dies for ex.
 
 # the actual levels
 var levels_dict : Array = []
@@ -61,11 +60,14 @@ func _ready():
 	rng.randomize()
 	
 	# JSON stuff
-	_level_file.open(_level_file_path, File.READ)
+#	_level_file.open(_level_file_path, File.READ)
 	var _level_data_raw = _level_file.get_as_text()
 	_level_file.close()
-	var _level_parse = JSON.parse(_level_data_raw)
-	level_data = _level_parse.result
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(_level_data_raw)
+	var _level_parse = test_json_conv.get_data()
+	print_debug(_level_parse)
+	level_data = _level_parse
 	
 	stageInit()
 
@@ -102,16 +104,16 @@ func wave():
 	for i in level_data[stageNo]["objPerWave"]:
 		spawnObj()
 		t.start()
-		yield(t, "timeout")
+		await t.timeout
 
 	print_debug("wave ends")
 	waveActive = false
 	waveDelta = 0.0
 
 func spawnObj():
-	var pos_offset : Vector2 = Vector2(rng.randi_range(0,objSpawn.rect_size.x),0)
-	var pos : Vector2 = objSpawn.rect_position + pos_offset
-	var _obj = objects[int(chanceObjMap[rng.randi_range(0,9)])].instance()
+	var pos_offset : Vector2 = Vector2(rng.randi_range(0,objSpawn.size.x),0)
+	var pos : Vector2 = objSpawn.position + pos_offset
+	var _obj = objects[int(chanceObjMap[rng.randi_range(0,9)])].instantiate()
 	_obj.position = pos
 	add_child(_obj)
 
@@ -134,15 +136,16 @@ func startBoss():
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
-	yield(t,"timeout")
+	await t.timeout
 	print_debug("timer over")
 
 	# todo add object burst
 	bossController.start()
 
-func cheat_processor(scancode):
-	cheat_map += scancode
-	cheat_map.erase(0,1)
+func cheat_processor(keycode):
+	print_debug(keycode + ";" + cheat_map)
+	cheat_map += keycode
+	cheat_map = cheat_map.left(cheat_map.length() - 1)
 	if cheat_map == cheat_bossskip:
 		print_debug("Cheat Active: BOSS SKIP")
 		waveActive = false

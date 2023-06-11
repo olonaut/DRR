@@ -1,11 +1,11 @@
 extends Button
 
-export(Resource) var newscene;
-export(bool) var exitsGame;
-export(bool) var hasFocus;
+@export var newscene: Resource;
+@export var exitsGame: bool;
+@export var hasFocus: bool;
 
 func _ready():
-	var _bindButton = self.connect("pressed",self, "loadScene");
+	var _bindButton = self.connect("pressed", Callable(self, "loadScene"));
 	if _bindButton == 0:
 		print_debug("Button binding successful");
 	else:
@@ -20,7 +20,7 @@ func loadScene():
 		get_tree().quit();
 	else:
 		print_debug("Changing Scene to " + newscene.get_path());
-		var _changescene = get_tree().change_scene(newscene.get_path());
+		var _changescene = get_tree().change_scene_to_file(newscene.get_path());
 		if _changescene == 0:
 			print_debug("Success");
 		else:

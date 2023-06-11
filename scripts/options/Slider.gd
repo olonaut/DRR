@@ -8,7 +8,7 @@ var slider;
 var maxDB = 0;
 var minDB = -72;
 
-export var bus : int;
+@export var bus : int;
 
 func _ready():
 	for n in get_children():
