@@ -20,7 +20,7 @@ pipeline {
                 BUILDNO=$(git rev-list --count ${GIT_COMMIT})
                 cd bin  
                 zip DRR-${BRANCH_NAME}-${BUILDNO}-win64.zip DRR-${BRANCH_NAME}-${BUILDNO}-win64.exe DRR-${BRANCH_NAME}-${BUILDNO}-win64.pck
-                zip DRR-${BRANCH_NAME}-${BUILDNO}-linux.zip DRR-${BRANCH_NAME}-${BUILDNO}-linux.bin
+                zip DRR-${BRANCH_NAME}-${BUILDNO}-linux.zip DRR-${BRANCH_NAME}-${BUILDNO}-linux.bin DRR-${BRANCH_NAME}-${BUILDNO}-linux.pck
                 rm DRR-${BRANCH_NAME}-${BUILDNO}-win64.exe DRR-${BRANCH_NAME}-${BUILDNO}-win64.pck
                 rm DRR-${BRANCH_NAME}-${BUILDNO}-linux.bin
                 '''
