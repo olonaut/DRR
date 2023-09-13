@@ -72,7 +72,7 @@ func _ready():
 	stageInit()
 
 func _process(delta):
-	if Input.is_action_just_released("ui_menu"):
+	if Input.is_action_just_released("ui_cancel"):
 		print_debug("pause");
 		pausePopup.popup_centered()
 		get_tree().paused = not get_tree().paused

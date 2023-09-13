@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cdhhqhdidaias" path="res://gfx/icons/danke_ronjaberg.png" id="1"]
 [ext_resource type="FontFile" path="res://font/titlemenu.tres" id="2"]
 [ext_resource type="Script" path="res://scripts/b_menu_button_controller.gd" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/credits.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bfmx54dsfanm5" path="res://scenes/credits.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://c5rkvr4ybf6me" path="res://scenes/level.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://scenes/options.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://0fo2btpepgle" path="res://scenes/options.tscn" id="6"]
 
 [node name="nTitleScreen" type="Node2D"]
 
