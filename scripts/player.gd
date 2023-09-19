@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@export
-var deathAnim: Node
+@export var deathAnim: Node
 var shot = preload("res://prefabs/Playershot.tscn")
 var shot_instance
 
